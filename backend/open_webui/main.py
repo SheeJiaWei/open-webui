@@ -1466,7 +1466,6 @@ async def get_models(
             pass
 
         models.append(model)
-        log.info("Model available:", model)
 
     model_order_list = request.app.state.config.MODEL_ORDER_LIST
     if model_order_list:
@@ -1566,7 +1565,6 @@ async def chat_completion(
         model_info_params = (
             model_info.params.model_dump() if model_info and model_info.params else {}
         )
-        log.info("Model info:", model_info_params)
 
         # Check base model existence for custom models
         if model_info_params.get("base_model_id"):
